@@ -1,4 +1,4 @@
-export const getLandingPage = /* GraphQL */ `
+export const QUERY_LANDING_PAGE = /* GraphQL */ `
   fragment logo on LandingPage {
     logo {
       url
@@ -69,14 +69,19 @@ export const getLandingPage = /* GraphQL */ `
     sectionAgenda {
       title
       description
-      pricingBox {
-        totalPrice
-        numberInstallments
-        priceInstallment
-        benefits
-        buttonLabel
-        buttonUrl
+    }
+  }
+
+  fragment pricingBox on LandingPage {
+    pricingBox {
+      totalPrice
+      numberInstallments
+      priceInstallment
+      benefits {
+        benefit
       }
+      buttonLabel
+      buttonUrl
     }
   }
 
@@ -130,6 +135,7 @@ export const getLandingPage = /* GraphQL */ `
       ...sectionConcepts
       ...sectionModules
       ...sectionAgenda
+      ...pricingBox
       ...sectionAboutUs
       ...sectionReviews
       ...sectionFaq

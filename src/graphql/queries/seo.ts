@@ -1,4 +1,4 @@
-export const QUERY_SEO = /* GraphQL */ `
+export const GET_SEO = /* GraphQL */ `
   query Seo {
     seo {
       title

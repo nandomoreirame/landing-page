@@ -1,4 +1,4 @@
-export const QUERY_LANDING_PAGE = /* GraphQL */ `
+export const GET_LANDING_PAGE = /* GraphQL */ `
   fragment logo on LandingPage {
     logo {
       url
